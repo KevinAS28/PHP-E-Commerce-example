@@ -1,0 +1,31 @@
+
+body{
+	margin: 0;
+
+}
+.topnav{
+	overflow: hidden;
+	background-color: #222;
+	margin-bottom: 20px;
+
+}
+
+.daftar_barang{
+	
+}
+
+.topnav a{
+	padding-left: 10px;
+	display: inline;
+	text-decoration: none;
+}
+.topnav h3:hover{
+	color: #000;
+	background-color: #fff;
+}
+.topnav h1{
+	color: #fff;
+}
+.topnav h3{
+	color: #fff;
+}

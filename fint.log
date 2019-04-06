@@ -1,0 +1,44 @@
+Log file for fint program
+Start at Thu Nov 15 11:51:56 2018 
+Mode = d 
+target directory = /opt/lampp/htdocs/emart2 
+Sentence to find = Edit Auth 
+scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-09 14-32-33.png
+error while scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-09 14-32-33.png
+scanning /opt/lampp/htdocs/emart2/hapus_barang.php
+scanning /opt/lampp/htdocs/emart2/edit_barang.php
+scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-12 16-20-16.png
+error while scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-12 16-20-16.png
+scanning /opt/lampp/htdocs/emart2/tambah_barang.php
+scanning /opt/lampp/htdocs/emart2/index.php
+scanning /opt/lampp/htdocs/emart2/edit_transaksi
+scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-15 03-28-31.png
+error while scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-15 03-28-31.png
+scanning /opt/lampp/htdocs/emart2/admin_page.php
+scanning /opt/lampp/htdocs/emart2/test.php
+scanning /opt/lampp/htdocs/emart2/hapus_transaksi.php
+scanning /opt/lampp/htdocs/emart2/fint.log
+scanning /opt/lampp/htdocs/emart2/rem_auth.php
+scanning /opt/lampp/htdocs/emart2/security.php
+scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-09 07-30-54.png
+error while scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-09 07-30-54.png
+scanning /opt/lampp/htdocs/emart2/tambah_user.php
+scanning /opt/lampp/htdocs/emart2/edit_auth.php
+scanning /opt/lampp/htdocs/emart2/login.php
+scanning /opt/lampp/htdocs/emart2/admin_page.css
+scanning /opt/lampp/htdocs/emart2/oc.jpg
+error while scanning /opt/lampp/htdocs/emart2/oc.jpg
+scanning /opt/lampp/htdocs/emart2/database.php
+scanning /opt/lampp/htdocs/emart2/logout.php
+scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-13 07-36-55.png
+error while scanning /opt/lampp/htdocs/emart2/Screenshot from 2018-11-13 07-36-55.png
+scanning /opt/lampp/htdocs/emart2/user.php
+scanning /opt/lampp/htdocs/emart2/edit_transaksi.php
+result:(finish)
+/opt/lampp/htdocs/emart2/edit_barang.php
+/opt/lampp/htdocs/emart2/tambah_barang.php
+/opt/lampp/htdocs/emart2/fint.log
+/opt/lampp/htdocs/emart2/tambah_user.php
+/opt/lampp/htdocs/emart2/edit_auth.php
+/opt/lampp/htdocs/emart2/edit_transaksi.php
+end at Thu Nov 15 11:51:56 2018
