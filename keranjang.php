@@ -15,8 +15,8 @@ if (isset($_GET["beli_barang"]))
 		printf("<script>
 		alert('Anda baru saja membeli barang %s. invoice anda: %s');
 		window.location.replace('index.php');
-		</script>", $barang[1], $in);
-	$db->hapus_keranjang($_GET["beli_barang"]);
+		</script>", $barang[0][1], $in);
+	$db->hapus_keranjang($_GET["id_barang_keranjang"]);
 }
 
 if (isset($_GET["beli"]))
@@ -68,6 +68,11 @@ $cart = $db->keranjang($_SESSION["id_user"]);
 
 		$icol = array(0, 1, 2);
 		
+
+		printf('cart:');
+			print_r($cart);
+			printf('<br/>');
+
 		foreach ($cart as $a)
 		{
 			echo "<tr>";
@@ -95,9 +100,10 @@ $cart = $db->keranjang($_SESSION["id_user"]);
 					}
 				printf("<td>%s</td>", $b);
 			}
+			
 			printf("<td>%s</td>", $jumlah*(int)$barang[5]);
-			printf("<td><a href='keranjang.php?beli_barang=%s&&jumlah=%s'>Beli</a></td>", $a[0], $a[3]);
-			printf("<td><a href='keranjang.php?hapus_barang=%s'>Hapus</a></td>", $a[0]);	
+			printf("<td><a href='keranjang.php?beli_barang=%s&&jumlah=%s&&id_barang_keranjang=%s'>Beli</a></td>", $a[2], $a[3], $a[0]);
+			printf("<td><a href='keranjang.php?hapus_barang=%s'>Hapus</a></td>", $a[2]);	
 			echo "</tr>";
 		}
 	?>

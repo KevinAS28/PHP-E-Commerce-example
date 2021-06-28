@@ -138,6 +138,7 @@ if (!isset($db))
 			$this->cusq( sprintf("update transaksi set invoice='%s' where id='%s'", $invoice, $rownya[0]));
 			return $invoice;
 		}
+		
 		public function beli_barang($id_barang, $id_user, $jumlah)
 		{
 			$tanggal_beli = date("y-m-d h:m:s.ms");
@@ -147,9 +148,12 @@ if (!isset($db))
 			$stok = (int)$barang[2];
 			$sisa = $stok-((int)$jumlah);
 			$q2= sprintf("update barang set jumlah='%s' where id='%s'", (string)$sisa, $id_barang);
+			$q3= sprintf("insert into transaksi(id_user, id_barang, jumlah, invoice, tanggal_beli) values('%s', '%s', '%s', '%s', '%s')", $id_user, $id_barang, $jumlah, $invoice, $tanggal_beli);
 			$this->cusq( $q2);
+			$this->cusq( $q3);
 			return $invoice;
 		}
+
 		public function login($email, $pass)
 		{
 			//$pass = md5($pass);
@@ -168,7 +172,6 @@ if (!isset($db))
 		public function tambah_barang($nama_barang, $jumlah, $deskripsi, $owner_id, $harga, $gambar)
 		{
 			$q = sprintf("insert into barang(nama_barang, jumlah, deskripsi, owner_id, harga, gambar) values('%s', '%s', '%s', '%s', '%s', '%s');", $nama_barang, $jumlah, $deskripsi, $owner_id, $harga, $gambar);
-			
 			$this->cusq( $q);
 		}		
 		public function set_user_dp($id, $pic)
@@ -250,8 +253,9 @@ if (!isset($db))
 		}
 		public function masukan_bukti($file, $id)
 		{
-			$q = sprintf("update transaksi set file_bukti_bayar='%s' where id='%s';", $file, $id);
-			$this->cusq($q);
+			$tanggal = date("y-m-d h:m:s.ms");
+			$q = sprintf("update transaksi set file_bukti_bayar='%s', tanggal_bayar='%s' where id='%s';", $file, $tanggal, $id);
+			$this->cusq($q);	
 		}
 		public function excel_laporan()
 		{

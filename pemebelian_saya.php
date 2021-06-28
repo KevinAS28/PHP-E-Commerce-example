@@ -26,48 +26,52 @@ if (isset($_POST["bukti"]))
 		{
 			printf("<td><b>%s</b></td>", $a);
 		}
+		
 		foreach ($pembelian as $a)
 		{
 		echo "<tr>";
-		$barang = $db->get_barang($a[2]);
-		if (!count($barang))
-		{
-			printf("<td>Keranjang %s</td>", $a[2]);
-		}
-		else{
-			printf("<td>%s</td>", $barang[0][1]);
-		}
-		
-		for ($i = 3; $i < count($a)-2; $i++)
-		{
-			if ($a[$i]=="")
+			$barang = $db->get_barang($a[2]);
+			if (!count($barang))
 			{
-				$a[$i]="<b>Kosong</b>";
+				printf("<td>Keranjang %s</td>", $a[2]);
 			}
-			printf("<td>%s</td>", $a[$i]);
-		}
-		echo "<td style='text-align: center;'>";
-		if ($a[count($a)-2]=="")
-		{
+			else{
+				printf("<td>%s</td>", $barang[0][1]);
+			}
 			
-		printf("
-			<form   action='pemebelian_saya.php?id=%s' method='post' enctype='multipart/form-data'>
-			<input type='file' name='gambar'/>
-			<input type='submit' value='Upload' name='bukti'/>
-			</form>
-			", $a[0]);
-		}else{
-			echo "<td ><a href='".$a[count($a)-2]."'><img style='width:35%; ' src='".$a[count($a)-2]."'/></a></td>";
-		}
-		echo "</td>";
+			for ($i = 3; $i < count($a)-2; $i++)
+			{
+				if ($a[$i]=="")
+				{
+					$a[$i]="<b>Kosong</b>";
+				}
+				printf("<td>%s</td>", $a[$i]);
+			}
+			
+			if ($a[count($a)-2]=="")
+			{
+				echo "<td style='text-align: center;'>";
+				
+				printf("
+					<form action='pemebelian_saya.php?id=%s' method='post' enctype='multipart/form-data'>
+					<input type='file' name='gambar'/>
+					<input type='submit' value='Upload' name='bukti'/>
+					</form>
+					", $a[0]);
+
+				echo "</td>";
+			}else{
+				echo "<td ><a href='".$a[count($a)-2]."'><img style='width:35%; ' src='".$a[count($a)-2]."'/></a></td>";
+			}
+			
 
 
-		if ($a[count($a)-1]=="")
-		{
-		printf("<td><h4>Belum Tersedia</h4></td>");
-		}else{
-		printf("<td>%s</td>", $a[count($a)-1]);
-		}
+			if ($a[count($a)-1]=="")
+			{
+			printf("<td><h4>Belum Tersedia</h4></td>");
+			}else{
+			printf("<td>%s</td>", $a[count($a)-1]);
+			}
 		echo "</tr>";
 		}
 	?>
